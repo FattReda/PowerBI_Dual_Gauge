@@ -1,0 +1,17 @@
+{
+    "version": "1.0.0",
+    "author": {"name":"FATTOUH Reda","email":"Fattouhreda1999@gmail.com"},
+    "resources": [
+        {
+            "resourceId": "rId0",
+            "sourceType": 5,
+            "file": "resources/visuel23497E31B67354AD89FDA3CC53165B6A6.pbiviz.json"
+        }
+    ],
+    "visual": {"name":"visuel2","displayName":"Dial Gauge","guid":"visuel23497E31B67354AD89FDA3CC53165B6A6","visualClassName":"Visual","version":"1.0.0","description":"Dial Gauge allows you to compare and visualize data.","supportUrl":"https://cutt.ly/SfjY4An","gitHubUrl":""},
+    "metadata": {
+        "pbivizjson": {
+            "resourceId": "rId0"
+        }
+    }  
+}

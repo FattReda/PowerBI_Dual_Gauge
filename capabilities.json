@@ -1,0 +1,645 @@
+{
+    "dataRoles": [
+        {
+            "name": "StartValue",
+            "kind": "Measure",
+            "displayName": "Start Value",
+            "description": "Data field that define start value"
+        },
+        {
+            "name": "TargetValue",
+            "kind": "Measure",
+            "displayName": "Target Value",
+            "description": "Data field that define target value"
+        },
+        {
+            "name": "IndicatorValue",
+            "kind": "Measure",
+            "displayName": "Pointer Value",
+            "description": "Indicator Pointing Value"
+        },
+        {
+            "name": "EndValue",
+            "kind": "Measure",
+            "displayName": "End Value",
+            "description": "Data field that define end value"
+        }
+    ],
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "StartValue": {
+                        "min": 0,
+                        "max": 1
+                    },
+                    "TargetValue": {
+                        "min": 0,
+                        "max": 1
+                    },
+                    "IndicatorValue": {
+                        "min": 0,
+                        "max": 1
+                    },
+                    "EndValue": {
+                        "min": 0,
+                        "max": 1
+                    }
+                }
+            ],
+            "categorical": {
+                "values": {
+                    "select": [
+                        {
+                            "bind": {
+                                "to": "StartValue"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "TargetValue"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "IndicatorValue"
+                            }
+                        },
+                        {
+                            "bind": {
+                                "to": "EndValue"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "objects": {
+        "gauge": {
+            "displayName": "Gauge Settings",
+            "description": "Set Gauge Settings.",
+            "properties": {
+                "label": {
+                    "displayName": "Dial Gauge Label",
+                    "description": "Gauge Label/Text.",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "autoSize": {
+                    "displayName": "Auto Size Dial Gauge",
+                    "description": "Change Gauge Size Value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "size": {
+                    "displayName": "Dial Gauge size",
+                    "description": "Gauge size.",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "decimals": {
+                    "displayName": "Values Decimal Places",
+                    "description": "Specify decimal places for decimal number.",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "showTicks": {
+                    "displayName": "Show Ticks",
+                    "description": "Hide/show Major & Minor Ticks.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "showMinor": {
+                    "displayName": "Show Minor Ticks Labels",
+                    "description": "Hide/show Minor Labels.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "minorTicks": {
+                    "displayName": "Minor Ticks",
+                    "description": "Number Of Minor Ticks.",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "range1Color": {
+                    "displayName": "Range 1 Color",
+                    "description": "Set Range 1 color.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": {
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "range2Color": {
+                    "displayName": "Range 2 Color",
+                    "description": "Set Range 2 color.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": {
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "pointerColor": {
+                    "displayName": "Pointer Fill",
+                    "description": "Set Pointer Fill.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": {
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "mainCircleColor": {
+                    "displayName": "Main Circle Fill",
+                    "description": "Fill Circle.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": {
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "centralCircleColor": {
+                    "displayName": "Pointer Circle Fill",
+                    "description": "Set Pointer Circle Fill.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": {
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "borderColor": {
+                    "displayName": "Border Fill",
+                    "description": "Border Fill.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": {
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "backgroundSettings": {
+            "displayName": "Fill",
+            "description": "Fill background with a color.",
+            "properties": {
+                "show": {
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "backgroundColor": {
+                    "displayName": "Color",
+                    "description": "Default color for background.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": {
+                                    "nullable": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "showImage": {
+                    "displayName": "Show Image",
+                    "description": "Enable this to show image specified in Image URL in visual background.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "imageURL": {
+                    "displayName": "Image URL",
+                    "description": "Specify Image URL.",
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        },
+        "textValuesSettings": {
+            "displayName": "% Values Settings",
+            "description": "Format settings to modify look and feel of the data label value for which value comes from 'Data field'.",
+            "properties": {
+                "show": {
+                    "displayName": "Show Label",
+                    "description": "Enable or disable category label.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "color": {
+                    "displayName": "Color",
+                    "description": "Default color of the data label.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "change_font": {
+                    "displayName": "Change Font Size",
+                    "description": "Change Default Font Size Value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fontSize": {
+                    "displayName": "Font Size",
+                    "description": "Specify font size for data label.",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "fontFamily": {
+                    "displayName": "Font family",
+                    "description": "Specify font family for data label.",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "displayName": "DIN",
+                                "value": "wf_standard-font, helvetica, arial, sans-serif"
+                            },
+                            {
+                                "displayName": "Arial",
+                                "value": "Arial"
+                            },
+                            {
+                                "displayName": "Arial Black",
+                                "value": "\"Arial Black\""
+                            },
+                            {
+                                "displayName": "Arial Unicode MS",
+                                "value": "\"Arial Unicode MS\""
+                            },
+                            {
+                                "displayName": "Calibri",
+                                "value": "Calibri"
+                            },
+                            {
+                                "displayName": "Cambria",
+                                "value": "Cambria"
+                            },
+                            {
+                                "displayName": "Cambria Math",
+                                "value": "\"Cambria Math\""
+                            },
+                            {
+                                "displayName": "Candara",
+                                "value": "Candara"
+                            },
+                            {
+                                "displayName": "Comic Sans MS",
+                                "value": "\"Comic Sans MS\""
+                            },
+                            {
+                                "displayName": "Consolas",
+                                "value": "Consolas"
+                            },
+                            {
+                                "displayName": "Constantia",
+                                "value": "Constantia"
+                            },
+                            {
+                                "displayName": "Corbel",
+                                "value": "Corbel"
+                            },
+                            {
+                                "displayName": "Courier New",
+                                "value": "\"Courier New\""
+                            },
+                            {
+                                "displayName": "Georgia",
+                                "value": "Georgia"
+                            },
+                            {
+                                "displayName": "Lucida Sans Unicode",
+                                "value": "\"Lucida Sans Unicode\""
+                            },
+                            {
+                                "displayName": "Segoe (Bold)",
+                                "value": "\"Segoe UI Bold\", wf_segoe-ui_bold, helvetica, arial, sans-serif"
+                            },
+                            {
+                                "displayName": "Segoe UI",
+                                "value": "\"Segoe UI\", wf_segoe-ui_normal, helvetica, arial, sans-serif"
+                            },
+                            {
+                                "displayName": "Segoe UI Light",
+                                "value": "\"Segoe UI Light\", wf_segoe-ui_bold, helvetica, arial, sans-serif"
+                            },
+                            {
+                                "displayName": "Symbol",
+                                "value": "Symbol"
+                            },
+                            {
+                                "displayName": "Tahoma",
+                                "value": "Tahoma"
+                            },
+                            {
+                                "displayName": "Times New Roman",
+                                "value": "\"Times New Roman\""
+                            },
+                            {
+                                "displayName": "Trebuchet MS",
+                                "value": "\"Trebuchet MS\""
+                            },
+                            {
+                                "displayName": "Verdana",
+                                "value": "Verdana"
+                            },
+                            {
+                                "displayName": "Wingdings",
+                                "value": "Wingdings"
+                            }
+                        ]
+                    }
+                },
+                "isBold": {
+                    "displayName": "Bold",
+                    "description": "Make data label bold.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "isItalic": {
+                    "displayName": "Italic",
+                    "description": "Make data label italic",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "textLabelSettings": {
+            "displayName": "Label Settings",
+            "description": "Format settings to modify look and feel of labels for which value comes from display name of the data field.",
+            "properties": {
+                "show": {
+                    "displayName": "Show Label",
+                    "description": "Enable or disable category label.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "change": {
+                    "displayName": "Change Labels Display",
+                    "description": "Change Labels Display.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "label1": {
+                    "displayName": "Label 1",
+                    "description": "Label 1 Text.",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "label2": {
+                    "displayName": "Label 2",
+                    "description": "Label 2 Text.",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "color": {
+                    "displayName": "Color",
+                    "description": "Default color of the category label. ",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "change_font": {
+                    "displayName": "Change Font Size",
+                    "description": "Change Font Size Value",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fontSize": {
+                    "displayName": "Font Size",
+                    "description": "Specify font size for category label.",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "fontFamily": {
+                    "displayName": "Font family",
+                    "description": "Specify font family for category label.",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "displayName": "Default",
+                                "value": "wf_standard-font, helvetica, arial, sans-serif"
+                            },
+                            {
+                                "displayName": "Arial",
+                                "value": "Arial"
+                            },
+                            {
+                                "displayName": "Arial Black",
+                                "value": "\"Arial Black\""
+                            },
+                            {
+                                "displayName": "Arial Unicode MS",
+                                "value": "\"Arial Unicode MS\""
+                            },
+                            {
+                                "displayName": "Calibri",
+                                "value": "Calibri"
+                            },
+                            {
+                                "displayName": "Cambria",
+                                "value": "Cambria"
+                            },
+                            {
+                                "displayName": "Cambria Math",
+                                "value": "\"Cambria Math\""
+                            },
+                            {
+                                "displayName": "Candara",
+                                "value": "Candara"
+                            },
+                            {
+                                "displayName": "Comic Sans MS",
+                                "value": "\"Comic Sans MS\""
+                            },
+                            {
+                                "displayName": "Consolas",
+                                "value": "Consolas"
+                            },
+                            {
+                                "displayName": "Constantia",
+                                "value": "Constantia"
+                            },
+                            {
+                                "displayName": "Corbel",
+                                "value": "Corbel"
+                            },
+                            {
+                                "displayName": "Courier New",
+                                "value": "\"Courier New\""
+                            },
+                            {
+                                "displayName": "Georgia",
+                                "value": "Georgia"
+                            },
+                            {
+                                "displayName": "Lucida Sans Unicode",
+                                "value": "\"Lucida Sans Unicode\""
+                            },
+                            {
+                                "displayName": "Segoe (Bold)",
+                                "value": "\"Segoe UI Bold\", wf_segoe-ui_bold, helvetica, arial, sans-serif"
+                            },
+                            {
+                                "displayName": "Segoe UI",
+                                "value": "\"Segoe UI\", wf_segoe-ui_normal, helvetica, arial, sans-serif"
+                            },
+                            {
+                                "displayName": "Segoe UI Light",
+                                "value": "\"Segoe UI Light\", wf_segoe-ui_bold, helvetica, arial, sans-serif"
+                            },
+                            {
+                                "displayName": "Symbol",
+                                "value": "Symbol"
+                            },
+                            {
+                                "displayName": "Tahoma",
+                                "value": "Tahoma"
+                            },
+                            {
+                                "displayName": "Times New Roman",
+                                "value": "\"Times New Roman\""
+                            },
+                            {
+                                "displayName": "Trebuchet MS",
+                                "value": "\"Trebuchet MS\""
+                            },
+                            {
+                                "displayName": "Verdana",
+                                "value": "Verdana"
+                            },
+                            {
+                                "displayName": "Wingdings",
+                                "value": "Wingdings"
+                            }
+                        ]
+                    }
+                },
+                "isBold": {
+                    "displayName": "Bold",
+                    "description": "Make category label bold.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "isItalic": {
+                    "displayName": "Italic",
+                    "description": "Make category label italic.",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "rect": {
+            "displayName": "Rectangle",
+            "properties": {
+                "show": {
+                    "displayName": "Show rectangles",
+                    "description": "Enable or disable rectangles.",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "rectangleColor": {
+                    "displayName": "Color",
+                    "description": "The fill color of the rectangle.",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "transparency": {
+                    "displayName": "Transparency",
+                    "description": "Set rectangle color opacity.",
+                    "type": {
+                        "integer": true
+                    }
+                },
+                "rectangleThickness": {
+                    "displayName": "Thickness",
+                    "description": "The rectangle's thickness.",
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        },
+        "aboutSettings": {
+            "displayName": "About",
+            "description": "Information related to the visual as version, help url and other useful links.",
+            "properties": {
+                "version": {
+                    "displayName": "Version",
+                    "description": "Version of the visual used.",
+                    "type": {
+                        "text": true
+                    }
+                },
+                "helpUrl": {
+                    "displayName": "Help URL",
+                    "description": "URL for general guidelines.",
+                    "type": {
+                        "text": true
+                    }
+                }
+            }
+        }
+    }
+}
